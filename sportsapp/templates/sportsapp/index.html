@@ -1,0 +1,65 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>NBA</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'sportsapp/index.css' %}">
+
+</head>
+</html>
+
+<body>
+
+<div class="header">
+    <h1>NBA NEWS</h1>
+    <p>Where the content is brought to you</p>
+</div>
+<div class="row">
+    <div class="leftcolumn">
+        <div class="card">
+            <h2>Left Column</h2>
+            <div class="fakeimg" style="height:200px;">Image</div>
+            <p>More Coming soon</p>
+            <p></p>
+        </div>
+        <div class="card">
+            <ul>
+
+                {% for entry in feeds.entries %}
+                <div>
+                    <li><a href="{{entry.link}}">{{entry.title}}</a>
+                        <p>{{entry.description}}<p>
+                    </li>
+                </div>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+    <div class="rightcolumn">
+        <div class="card">
+            <h2>About Me</h2>
+            <div class="fakeimg" style="height:100px;">Image</div>
+            <p>Some text about me in culpa qui officia deserunt mollit anim..</p>
+        </div>
+        <div class="card">
+            <h3>Popular Post</h3>
+            <div class="fakeimg"><p>Image</p></div>
+            <div class="fakeimg"><p>Image</p></div>
+            <div class="fakeimg"><p>Image</p></div>
+        </div>
+        <div class="card">
+            <h3>Follow Me</h3>
+            <p>Some text..</p>
+        </div>
+    </div>
+</div>
+
+<div class="footer">
+    <h2>Footer</h2>
+</div>
+
+</body>
+</html>
