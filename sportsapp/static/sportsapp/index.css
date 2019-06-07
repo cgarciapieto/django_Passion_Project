@@ -60,11 +60,6 @@ div li{
 }
 
 
-.fakeimg {
-    background-color: #c0deed;
-    width: 100%;
-    padding: 20px;
-}
 
 
 .card {
@@ -74,7 +69,7 @@ div li{
     text-decoration: none;
 }
 
-
+/* selector inserts something after the content of each selected element(s).*/
 .row:after {
     content: "";
     display: table;
@@ -108,87 +103,3 @@ h1{
 
 
 
-/*body {*/
-/*    padding-top: 20px;*/
-/*    background-color: #5bb8b2;*/
-
-
-/*}*/
-
-/*.grid-1 {*/
-/*    display: grid;*/
-/*    width: 100%;*/
-/*    max-width: 750px;*/
-/*    margin: 0 auto;*/
-/*    grid-template-columns: repeat(3, 2fr);*/
-
-/*    grid-gap: 20px;*/
-/*}*/
-
-
-
-/*.grid-1 div {*/
-/*    color: #051923;*/
-
-/*    padding: 10px;*/
-/*    font-family: sans-serif;*/
-
-/*}*/
-
-/*!* this is where the navbar is placed*!*/
-
-/*.item-1 {*/
-/*    grid-column: 1 / 4;*/
-/*    grid-row: 1;*/
-/*    background: rgba(20, 29, 59, 0.83);*/
-/*    justify-content: space-around;*/
-
-/*}*/
-
-
-/*.item-2 {*/
-/*    background: rgba(39, 95, 255, 0.83);*/
-/*    grid-column: 1 /4;*/
-/*    grid-row: 2;*/
-/*    font-size: 24px;*/
-/*    text-align: center;*/
-/*    text-decoration-color: #051923;*/
-/*    font-family: 'Carter One', cursive;*/
-
-/*}*/
-/*.item-3 {*/
-/*    background: #f5fffa;*/
-/*    grid-column: 1 / 4;*/
-/*    grid-row: 3;*/
-/*    font-size: 15px;*/
-/*    text-decoration-color: #373737;*/
-/*    text-align: justify;*/
-/*}*/
-/*.item-4 {*/
-/*    background: #f5fffa;*/
-/*    grid-column: 1/4;*/
-/*    grid-row: 6;*/
-/*    text-align: center;*/
-
-/*}*/
-/*.item-5 {*/
-/*    background: #f5fffa;*/
-/*    grid-column: 1/4;*/
-/*    grid-row: 4;*/
-
-
-/*}*/
-/*.item-6 {*/
-/*    background: rgba(25, 205, 20, 0.55);*/
-/*    grid-column: 2/4;*/
-/*    grid-row: 4/4;*/
-/*    font-family: 'Cinzel', serif;*/
-/*}*/
-
-
-/*.item-7 {*/
-/*    grid-column: 1/4;*/
-/*    grid-row: 3;*/
-/*    position: center;*/
-/*    text-align: center;*/
-/*}*/
