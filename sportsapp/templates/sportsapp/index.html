@@ -31,16 +31,18 @@
         </div>
         {% block content %}
         <div class="card">
+            <h1>  News Feed </h1>
             <ul>
 
                 {% for entry in feeds.entries %}
                 <div>
-                    <li><a href="{{entry.link}}" target="_blank">{{entry.title}}</a>
-                        <p>{{entry.description}}<p>
+                    <li><a href="{{entry.link}}" target="_blank" style="text-decoration:none">{{entry.title}}</a>
+                    <section>{{entry.description}}</section>
                     </li>
                 </div>
                 {% endfor %}
             </ul>
+            <h5>Rss feed provided by nba.com</h5>
         </div>
         {% endblock content %}
 
@@ -49,23 +51,19 @@
 
     <div class="rightcolumn">
         <div class="card">
-            <h2>TRASH TALK</h2>
+            <h1>TRASH TALK</h1>
             {% for obj in object_list %}
-            <h3 class="username">{{ obj.title}}</h3>
+            <h2 id="username">{{ obj.title}}</h2>
             <p>{{ obj.content }}</p>
             <p>{{ obj.dateCreated }}</p>
             {% endfor %}
 
 
         </div>
-        <div class="card">
-            <h3>Follow Me</h3>
-            <p></p>
-        </div>
     </div>
 </div>
 <div class="footer">
-    <h5>site created by Carlos Garcia </h5>
+    <h4>site created by Carlos Garcia </h4>
 </div>
 
 </body>
