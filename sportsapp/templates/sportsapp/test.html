@@ -1,0 +1,12 @@
+{% extends 'sportsapp/index.html' %}
+
+
+{% block content%}
+
+
+{% for obj in object_list %}
+<p>{{ obj.content }}</p>
+{% endfor %}
+
+
+{% endblock content %}

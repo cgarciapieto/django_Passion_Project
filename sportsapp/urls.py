@@ -2,9 +2,12 @@ from django.urls import path
 
 from . import views
 
-from . import feed
+
 
 urlpatterns = [
+    path('', views.index, name='index'),
+    path('createpost/', views.createpost, name='createpost'),
+    path('test/', views.post_list, name='post_list'),
     path('', views.index, name='index'),
 
 
