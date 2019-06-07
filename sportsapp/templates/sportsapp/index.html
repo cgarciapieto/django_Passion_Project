@@ -45,7 +45,10 @@
                 {% for entry in feeds.entries %}
                 <div>
                     <li><a href="{{entry.link}}" target="_blank" style="text-decoration:none">{{entry.title}}</a>
+
                     <section>{{entry.description}}</section>
+                        <br>
+
                     </li>
                 </div>
                 {% endfor %}
