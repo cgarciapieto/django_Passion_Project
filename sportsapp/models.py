@@ -15,7 +15,7 @@ from django.utils import timezone
 class PostModel(models.Model):
     title = models.CharField(max_length=100)
     content = models.TextField(max_length=140)
-    dateCreated = models.DateField(default=timezone.now)
+    dateCreated = models.TimeField(default=timezone.now)
 
 
     def __str__(self):

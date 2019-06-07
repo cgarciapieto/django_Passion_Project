@@ -11,7 +11,7 @@ from django.core.paginator import Paginator
 def index(request):
 
     form = PostForm(request.POST or None)
-    queryset = PostModel.objects.all().order_by('dateCreated')[:5]
+    queryset = PostModel.objects.all().order_by('-id')[:5]
     feeds = feedparser.parse('http://www.nba.com/rss/nba_rss.xml')
 
     context = {
@@ -80,7 +80,7 @@ def createpost(request):
 
 
 def post_list(request):
-    queryset = PostModel.objects.all()
+    queryset = PostModel.objects.all().order_by('dateCreated')[:10]
     context = {
         "object_list":  queryset,
         'title': 'List'

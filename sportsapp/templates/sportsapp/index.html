@@ -14,6 +14,7 @@
 <body>
 
 <div class="header">
+
     <h1>NBA NEWS</h1>
     <p>Where the content is brought to you</p>
 </div>
@@ -52,15 +53,9 @@
             {% for obj in object_list %}
             <h3 class="username">{{ obj.title}}</h3>
             <p>{{ obj.content }}</p>
+            <p>{{ obj.dateCreated }}</p>
             {% endfor %}
 
-
-        </div>
-        <div class="card">
-            <h3>Popular Post</h3>
-            <div class="fakeimg">
-
-            </div>
 
         </div>
         <div class="card">
