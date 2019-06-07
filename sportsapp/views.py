@@ -11,7 +11,10 @@ from django.core.paginator import Paginator
 def index(request):
 
     form = PostForm(request.POST or None)
+    # grabs all objects from datbase and orders by date 5 at a time
     queryset = PostModel.objects.all().order_by('-id')[:5]
+
+    # imports feedparser to parse the data from the xml url and puts it into context
     feeds = feedparser.parse('http://www.nba.com/rss/nba_rss.xml')
 
     context = {
@@ -20,38 +23,24 @@ def index(request):
         'Postform': form,
     }
     if request.method == 'POST':
-        print(request.method)
+
         if form.is_valid():
             form.save()
             return redirect('index')
 
         else:
-            print(form.errors)
-        context = {
+
+            context = {
     'errors': form.errors,
     'Postform': form,
             'feeds': feeds,
 }
 
-    # latest_post_list = Post.objects.all()
-    # context = {'latest_post_list':latest_post_list}
-    # return render(request, 'posts/index.html', context)
+
 
     return render(request, 'sportsapp/index.html', context)
 
-# def createpost(request):
-#     form = PostForm(request.POST or None)
-#     if form.is_valid():
-#         instance= form.save(commit=False)
-#         instance.save()
-#         messages.success(request, 'Successfully Created')
-#         return HttpResponseRedirect(instance.get_absolute_())
-#     else:
-#         messages.error(request, 'Not Successfully Created')
-#     context={
-#         'form': form,
-#     }
-#     return render(request, "sportsapp/post_form.html", context)
+
 
 def createpost(request):
     form = PostForm(request.POST or None)
@@ -60,7 +49,7 @@ def createpost(request):
     context = {'Postform': form}
 
     if request.method == 'POST':
-        print(request.method)
+
 
         if form.is_valid():
 
@@ -69,7 +58,7 @@ def createpost(request):
             return redirect('index')
 
         else:
-            print(form.errors)
+
             context = {
                 'errors': form.errors,
                 'Postform': form
@@ -77,7 +66,7 @@ def createpost(request):
 
     return render(request, "sportsapp/post_form.html", context)
 
-
+# grabs all objects from datbase and orders by date10 at a time
 
 def post_list(request):
     queryset = PostModel.objects.all().order_by('dateCreated')[:10]
