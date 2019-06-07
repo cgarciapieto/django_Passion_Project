@@ -1,12 +1,15 @@
 
-
 <!DOCTYPE html>
+{% load crispy_forms_tags %}
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>NBA</title>
     {% load static %}
     <link rel="stylesheet" href="{% static 'sportsapp/index.css' %}">
+
+
 
 </head>
 </html>
@@ -20,10 +23,15 @@
 </div>
 <div class="row">
     <div class="leftcolumn">
+
+
         <div class="card">
+            <h1>Chat Box</h1>
+
             <form  method="POST">
                 {% csrf_token %}
-                {{ Postform.as_p }}
+                {{ Postform|crispy }}
+
                 <button>Submit</button>
             </form>
 
@@ -57,7 +65,20 @@
             <p>{{ obj.content }}</p>
             <p>{{ obj.dateCreated }}</p>
             {% endfor %}
+        </div>
 
+        <div class="card" style="text-align: center">
+            <h1>Policy </h1>
+            <div>
+                <uL>
+                    <li>No Harrasment</li>
+                    <li>No Harrasment</li>
+                    <li>No Harrasment</li>
+                    <li>No Harrasment</li>
+                    <li>No Harrasment</li>
+                    <li>No Harrasment</li>
+                </uL>
+            </div>
 
         </div>
     </div>
